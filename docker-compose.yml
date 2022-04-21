@@ -1,23 +1,19 @@
-version: "2.2"
+version: "3.4"
 
 services:
-  mysql:
-    image: mysql:5.7
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_USER=petclinic
-      - MYSQL_PASSWORD=petclinic
-      - MYSQL_DATABASE=petclinic
+  petclinic:
+    image: smithst987/petclinic:latest
+    container_name: petclinic
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - "./conf.d:/etc/mysql/conf.d:ro"
-  postgres:
-    image: postgres:14.1
-    ports:
-      - "5432:5432"
+      - ./contrast_security.yaml:/app/petclinic/contrast_security.yaml
     environment:
-      - POSTGRES_PASSWORD=petclinic
-      - POSTGRES_USER=petclinic
-      - POSTGRES_DB=petclinic
+      - CONTRAST_CONFIG_PATH=/app/petclinic/contrast_security.yaml
+      - CONTRAST__ENABLE=TRUE
+      - CONTRAST__AGENT__JAVA__STANDALONE__APP__NAME=PetClinic
+      - CONTRAST__APPLICATION__GROUP=application_control_2
+      - CONTRAST__APPLICATION__METADATA=bU=PS, contact=steve.smith@contrastsecurity.com
+    ports:
+      - "8989:8080"
