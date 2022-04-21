@@ -6,7 +6,6 @@ WORKDIR /petclinic
 FROM adoptopenjdk/maven-openjdk11
 WORKDIR /petclinic
 COPY --from=installer /petclinic /app/petclinic
-EXPOSE 8080
 
 EXPOSE 8080
 
