@@ -19,12 +19,11 @@ api:<br>
 &nbsp;&nbsp;api_key: [REDACTED<br>
 &nbsp;&nbsp;service_key: [REDACTED]<br>
 &nbsp;&nbsp;user_name: [REDACTED]<br>
-agent:
-&nbsp;&nbsp;java:
-&nbsp;&nbsp;&nbsp;&nbsp;standalone_app_name: PetClinic
-&nbsp;&nbsp;user_name: agent_f7602ec5-41d9-4e32-87d1-71b8ebd183c9@SteveSmithOrganization
-application:
-&nbsp;&nbsp;session_metadata: buildNumber=${BUILD_NUMBER}, committer=Steve Smith
+agent:<br>
+&nbsp;&nbsp;java:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;standalone_app_name: PetClinic<br>
+application:<br>
+&nbsp;&nbsp;session_metadata: buildNumber=${BUILD_NUMBER}, committer=Steve Smith<br>
 
 Your contrast_security.yaml file needs to be in the application's root directory.
 
