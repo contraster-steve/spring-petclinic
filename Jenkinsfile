@@ -26,7 +26,7 @@ pipeline {
                     sh 'echo "api:\n  url: https://apptwo.contrastsecurity.com/Contrast\n  api_key: ${api_key}\n  service_key: ${service_key}\n:  user_name: ${user_name}\nagent:\n  java:\n    standalone_app_name: PetClinic\napplication:\n  session_metadata: "buildNumber=${BUILD_NUMBER}, committer=Steve Smith"" >> ./spring-petclinic/contrast_security.yaml'
                     sh 'chmod 755 ./spring-petclinic/contrast_security.yaml'
                     echo "Download Agent"
-                    sh 'sudo wget -O ./spring-petclinic/contrast.jar https://repo1.maven.org/maven2/com/contrastsecurity/contrast-agent/3.14.0.26897/contrast-agent-3.14.0.26897.jar'
+                    sh 'sudo wget -O ./spring-petclinic/contrast.jar https://repo1.maven.org/maven2/com/contrastsecurity/contrast-agent/3.15.0.27227/contrast-agent-3.14.0.26897.jar'
                 }
             }
         }
